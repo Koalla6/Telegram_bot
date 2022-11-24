@@ -1,11 +1,12 @@
+import config
 import mysql.connector
 
 def russian_channels():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        passwd='root',
-        database='channels'
+        host=config.HOST,
+        user=config.USER,
+        passwd=config.PASSWORD,
+        database=config.DATABASE_NAME
     )
     mycursor = mydb.cursor()
     mycursor.execute("SELECT link_to_connect FROM russian")
@@ -17,10 +18,10 @@ def russian_channels():
 
 def ukrainian_channels():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        passwd='root',
-        database='channels'
+        host=config.HOST,
+        user=config.USER,
+        passwd=config.PASSWORD,
+        database=config.DATABASE_NAME
     )
     mycursor = mydb.cursor()
     mycursor.execute("SELECT link_to_connect FROM ukrainian")
@@ -32,10 +33,10 @@ def ukrainian_channels():
 
 def ukrainian_channels_r():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        passwd='root',
-        database='channels'
+        host=config.HOST,
+        user=config.USER,
+        passwd=config.PASSWORD,
+        database=config.DATABASE_NAME
     )
     mycursor = mydb.cursor()
     mycursor.execute("SELECT link_to_connect FROM ukrainian_r")
@@ -47,10 +48,10 @@ def ukrainian_channels_r():
 
 def show_russian_channels():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        passwd='root',
-        database='channels'
+        host=config.HOST,
+        user=config.USER,
+        passwd=config.PASSWORD,
+        database=config.DATABASE_NAME
     )
     mycursor = mydb.cursor()
     mycursor.execute("SELECT channel_name, link FROM russian")
@@ -63,10 +64,10 @@ def show_russian_channels():
 
 def show_ukrainian_channels():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        passwd='root',
-        database='channels'
+        host=config.HOST,
+        user=config.USER,
+        passwd=config.PASSWORD,
+        database=config.DATABASE_NAME
     )
     mycursor = mydb.cursor()
     mycursor.execute("SELECT channel_name, link FROM ukrainian")

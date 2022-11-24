@@ -1,7 +1,8 @@
 from ez_telegram import EzClient
 from database import russian_channels, ukrainian_channels, ukrainian_channels_r
 
-def channels_rus(word_list):
+
+async def channels_rus(word_list):
     count = 0
     client = EzClient()
     russian_links = russian_channels()
@@ -19,10 +20,11 @@ def channels_rus(word_list):
         except:
             print("Exception found")
             continue
-    persents = 100 * count / (len(russian_links) * len(word_list))
-    return persents
+    percents = 100 * count / (len(russian_links) * len(word_list))
+    return percents
 
-def channels_ukr(word_list):
+
+async def channels_ukr(word_list):
     count = 0
     client = EzClient()
     ukrainian_links = ukrainian_channels()
@@ -36,10 +38,11 @@ def channels_ukr(word_list):
         except:
             print("Exception found")
             continue
-    persents = 100 * count / (len(ukrainian_links) * len(word_list))
-    return persents
+    percents = 100 * count / (len(ukrainian_links) * len(word_list))
+    return percents
 
-def channels_ukr_r(word_list):
+
+async def channels_ukr_r(word_list):
     count = 0
     client = EzClient()
     ukrainian_links_r = ukrainian_channels_r()
@@ -53,14 +56,10 @@ def channels_ukr_r(word_list):
         except:
             print("Exception found")
             continue
-    persents = 100 * count / (len(ukrainian_links_r) * len(word_list))
-    return persents
+    percents = 100 * count / (len(ukrainian_links_r) * len(word_list))
+    return percents
 
-
-
-
-#message = client.get_messages(channel="VARTA1")
-
+# message = client.get_messages(channel="VARTA1")
 
 
 # client = EzClient()
@@ -72,31 +71,27 @@ def channels_ukr_r(word_list):
 #     print("False")
 
 
-
-
-
-#list(map(print, message))
+# list(map(print, message))
 
 # for i in message:
 #     if i
 
-#test_list = []
+# test_list = []
 # #
 #     for i in word_list:
-    # #print(i)
-    #     filter_object = filter(lambda a: i in a, message)
-    #     #print("here")
-    #     if list(filter_object) != []:
-    #         print(i, "True")
-    #     else:
-    #         print(i, "False")
-    #print("\t\t here \t", message)
-
+# #print(i)
+#     filter_object = filter(lambda a: i in a, message)
+#     #print("here")
+#     if list(filter_object) != []:
+#         print(i, "True")
+#     else:
+#         print(i, "False")
+# print("\t\t here \t", message)
 
 
 # #list(map(print, filter_object))
 # print(list(filter_object))
 
-#print(message)
-#list = ["gyh", "jfn", "frhuj"]
-#print(list)
+# print(message)
+# list = ["gyh", "jfn", "frhuj"]
+# print(list)

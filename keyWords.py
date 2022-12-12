@@ -2,7 +2,7 @@ from rutermextract import TermExtractor
 # import asyncio
 
 
-async def key_words(text):
+def key_words(text):
     term_extractor = TermExtractor()
     # print(term_extractor(text))
     word_list = []

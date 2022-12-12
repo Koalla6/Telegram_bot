@@ -4,7 +4,7 @@ from googletrans import Translator, constants
 from pprint import pprint
 
 
-async def translate_phrase(text):
+def translate_phrase(text):
     translator = Translator()
     # print(text)
 
@@ -13,6 +13,7 @@ async def translate_phrase(text):
     except:
         print("Error")
 
+    print("started language: " + translation.src)
     if translation.src == "uk":
         translation = translator.translate(text, src="uk", dest="ru")
         print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")

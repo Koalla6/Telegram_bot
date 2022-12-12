@@ -2,7 +2,7 @@ from ez_telegram import EzClient
 from database import russian_channels, ukrainian_channels, ukrainian_channels_r
 
 
-async def channels_rus(word_list):
+def channels_rus(word_list):
     count = 0
     client = EzClient()
     russian_links = russian_channels()
@@ -24,7 +24,7 @@ async def channels_rus(word_list):
     return percents
 
 
-async def channels_ukr(word_list):
+def channels_ukr(word_list):
     count = 0
     client = EzClient()
     ukrainian_links = ukrainian_channels()
@@ -42,7 +42,7 @@ async def channels_ukr(word_list):
     return percents
 
 
-async def channels_ukr_r(word_list):
+def channels_ukr_r(word_list):
     count = 0
     client = EzClient()
     ukrainian_links_r = ukrainian_channels_r()

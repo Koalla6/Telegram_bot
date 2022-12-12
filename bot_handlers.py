@@ -93,6 +93,7 @@ async def text(call: types.CallbackQuery):
     reply_is_graphics = False
     while not types.Message:
         await reply(types.Message)
+    # await call.message.answer(text = CHOOSE_TYPE_OF_REPLY, reply_markup=reply_keyboard)
 
 @dp.message_handler()
 async def reply(message: types.Message):
@@ -139,7 +140,7 @@ async def get_user_text(message: types.Message):
     # message.reply(text="Обробка інформації...")
     # print(text)
     # bot.reply_to(message, "оце?)")
-    translation_src_text = await translate_phrase(text)
+    translation_src_text = translate_phrase(text)
     translation_src = translation_src_text[0]
     translation_text = translation_src_text[1]
     #bot.reply_to(message, translation_text)
@@ -147,22 +148,22 @@ async def get_user_text(message: types.Message):
 
     if translation_src == "uk":
         print("кацапські слова")
-        word_list_ru = await key_words(translation_text)
+        word_list_ru = key_words(translation_text)
         print("_________________________________________")
         print("українські слова")
-        word_list_uk = await key_words(text)
-        percents_rus = await channels_rus(word_list_ru)
-        percents_ukr = await channels_ukr(word_list_uk)
-        percents_ukr_r = await channels_ukr_r(word_list_ru)
+        word_list_uk = key_words(text)
+        percents_rus = channels_rus(word_list_ru)
+        percents_ukr = channels_ukr(word_list_uk)
+        percents_ukr_r = channels_ukr_r(word_list_ru)
         percents_ukr += percents_ukr_r
         percents = [percents_rus, percents_ukr]
         return percents
     elif translation_src == "ru":
-        word_list_ru = await key_words(text)
-        word_list_uk = await key_words(translation_text)
-        percents_rus = await channels_rus(word_list_ru)
-        percents_ukr = await channels_ukr(word_list_uk)
-        percents_ukr_r = await channels_ukr_r(word_list_ru)
+        word_list_ru = key_words(text)
+        word_list_uk = key_words(translation_text)
+        percents_rus = channels_rus(word_list_ru)
+        percents_ukr = channels_ukr(word_list_uk)
+        percents_ukr_r = channels_ukr_r(word_list_ru)
         percents_ukr += percents_ukr_r
         percents = [percents_rus, percents_ukr]
         return percents
